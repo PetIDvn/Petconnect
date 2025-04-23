@@ -1,135 +1,114 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetConnect - Kết Nối Chủ Nuôi & Dịch Vụ</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #ffeb99;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-        .feature {
-            background: #fff3e0;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .feature:hover {
-            transform: scale(1.05);
-        }
-        .banner {
-            background: url('https://source.unsplash.com/1200x400/?pets') no-repeat center;
-            background-size: cover;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-        .btn-cute {
-            background-color: #ffcc00;
-            color: white;
-            border-radius: 20px;
-            padding: 10px 20px;
-            transition: background-color 0.3s;
-        }
-        .btn-cute:hover {
-            background-color: #d4a600;
-        }
-        .language-switch {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Khảo sát doanh nghiệp dịch vụ thú cưng</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2em auto; padding: 0 1em; }
+    h1, h2 { color: #333; }
+    .question { margin-bottom: 1.5em; }
+    label { display: block; margin-bottom: .3em; }
+    input[type="text"], textarea, select { width: 100%; padding: .5em; margin-bottom: .5em; }
+    .checkboxes label, .radios label { display: inline-block; margin-right: 1em; }
+    button { padding: .7em 1.5em; font-size: 1em; }
+  </style>
 </head>
 <body>
-    <div class="language-switch">
-        <select id="language" class="form-select" onchange="changeLanguage()">
-            <option value="vi">Tiếng Việt</option>
-            <option value="en">English</option>
-        </select>
+  <h1>Khảo sát doanh nghiệp dịch vụ thú cưng</h1>
+  <p>Thu thập thông tin về khó khăn hiện tại và khả năng tiếp cận khách hàng của các doanh nghiệp thú cưng tại TP.HCM.</p>
+  <form action="https://example.com/submit" method="post">
+    <h2>1. Thông tin chung</h2>
+    <div class="question">
+      <label for="name">Tên doanh nghiệp *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="question checkboxes">
+      <label>Loại hình dịch vụ chính (chọn tối đa 3) *</label>
+      <label><input type="checkbox" name="services" value="Phòng khám thú y"> Phòng khám thú y</label>
+      <label><input type="checkbox" name="services" value="Spa/Grooming"> Spa/Grooming</label>
+      <label><input type="checkbox" name="services" value="Cửa hàng thú cưng"> Cửa hàng thú cưng</label>
+      <label><input type="checkbox" name="services" value="Khách sạn thú cưng"> Khách sạn thú cưng</label>
+      <label><input type="checkbox" name="services" value="Khác"> Khác (ghi rõ): <input type="text" name="services_other"></label>
+    </div>
+    <div class="question">
+      <label for="address">Địa chỉ (Quận/Huyện, TP.HCM) *</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div class="question radios">
+      <label>Thời gian hoạt động *</label>
+      <label><input type="radio" name="tenure" value="Dưới 1 năm" required> Dưới 1 năm</label>
+      <label><input type="radio" name="tenure" value="1–3 năm"> 1–3 năm</label>
+      <label><input type="radio" name="tenure" value="Trên 3 năm"> Trên 3 năm</label>
     </div>
 
-    <header class="bg-warning text-white text-center py-3">
-        <h1>🐾 PetConnect - Kết Nối Chủ Nuôi & Dịch Vụ 🐾</h1>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">🐶 PetConnect</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Dịch vụ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Hồ sơ thú cưng</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Nhắc lịch</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="banner">
-        Chăm sóc thú cưng dễ dàng và đáng yêu hơn bao giờ hết! 🐾
+    <h2>2. Khó khăn hiện tại</h2>
+    <div class="question checkboxes">
+      <label>Những khó khăn lớn nhất đang gặp phải? (tối đa 3) *</label>
+      <label><input type="checkbox" name="issues" value="Thiếu khách hàng"> Thiếu khách hàng</label>
+      <label><input type="checkbox" name="issues" value="Không có nền tảng quản lý hiệu quả"> Không có nền tảng quản lý hiệu quả</label>
+      <label><input type="checkbox" name="issues" value="Khó giữ chân khách hàng cũ"> Khó giữ chân khách hàng cũ</label>
+      <label><input type="checkbox" name="issues" value="Không đủ nhân sự"> Không đủ nhân sự</label>
+      <label><input type="checkbox" name="issues" value="Thiếu công cụ marketing"> Thiếu công cụ marketing</label>
+      <label><input type="checkbox" name="issues" value="Khác"> Khác (ghi rõ): <input type="text" name="issues_other"></label>
+    </div>
+    <div class="question radios">
+      <label>Phương pháp quản lý lịch hẹn &amp; thông tin khách hàng? *</label>
+      <label><input type="radio" name="management" value="Ghi tay/sổ sách" required> Ghi tay/sổ sách</label>
+      <label><input type="radio" name="management" value="Excel"> Excel</label>
+      <label><input type="radio" name="management" value="Phần mềm riêng"> Phần mềm riêng</label>
+      <label><input type="radio" name="management" value="Không quản lý"> Không quản lý</label>
+      <label><input type="radio" name="management" value="Khác"> Khác (ghi rõ): <input type="text" name="management_other"></label>
+    </div>
+    <div class="question radios">
+      <label>Đã từng dùng nền tảng kết nối trực tuyến? *</label>
+      <label><input type="radio" name="used_platform" value="Có" required> Có (ghi rõ): <input type="text" name="platform_name"></label>
+      <label><input type="radio" name="used_platform" value="Chưa"> Chưa</label>
     </div>
 
-    <div class="container mt-4">
-        <h2 class="text-center">🐾 Hồ sơ thú cưng 🐾</h2>
-        <form>
-            <input type="text" class="form-control mb-2" placeholder="Tên thú cưng">
-            <input type="date" class="form-control mb-2" placeholder="Ngày sinh">
-            <input type="text" class="form-control mb-2" placeholder="Giống loài">
-            <textarea class="form-control mb-2" placeholder="Tình trạng sức khỏe"></textarea>
-            <button class="btn btn-cute w-100">Lưu hồ sơ</button>
-        </form>
+    <h2>3. Khả năng tiếp cận khách hàng</h2>
+    <div class="question checkboxes">
+      <label>Kênh tìm kiếm khách hàng mới (tất cả phù hợp) *</label>
+      <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
+      <label><input type="checkbox" name="channels" value="Zalo"> Zalo</label>
+      <label><input type="checkbox" name="channels" value="Google Map"> Google Map</label>
+      <label><input type="checkbox" name="channels" value="Giới thiệu"> Giới thiệu qua khách cũ</label>
+      <label><input type="checkbox" name="channels" value="Không có kênh"> Không có kênh cụ thể</label>
+      <label><input type="checkbox" name="channels" value="Khác"> Khác (ghi rõ): <input type="text" name="channels_other"></label>
+    </div>
+    <div class="question radios">
+      <label>Gặp khó khăn duy trì lượng khách ổn định? *</label>
+      <label><input type="radio" name="stable_customers" value="Có" required> Có</label>
+      <label><input type="radio" name="stable_customers" value="Không"> Không</label>
+      <label><input type="radio" name="stable_customers" value="Khó trả lời"> Khó trả lời</label>
+    </div>
+    <div class="question checkboxes">
+      <label>Quan tâm tham gia nền tảng kết nối để: *</label>
+      <label><input type="checkbox" name="interests" value="Tiếp cận khách hàng mới"> Tiếp cận khách hàng mới</label>
+      <label><input type="checkbox" name="interests" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
+      <label><input type="checkbox" name="interests" value="Tăng hiện diện online"> Tăng hiện diện online</label>
+      <label><input type="checkbox" name="interests" value="Không quan tâm"> Không quan tâm</label>
     </div>
 
-    <div class="container mt-4">
-        <h2 class="text-center">📅 Nhắc lịch chăm sóc 📅</h2>
-        <form>
-            <input type="date" class="form-control mb-2">
-            <input type="text" class="form-control mb-2" placeholder="Dịch vụ cần nhắc">
-            <button class="btn btn-cute w-100">Thêm nhắc lịch</button>
-        </form>
+    <h2>4. Kỳ vọng (tùy chọn)</h2>
+    <div class="question checkboxes">
+      <label>Mong muốn tính năng nào trên nền tảng?</label>
+      <label><input type="checkbox" name="features" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
+      <label><input type="checkbox" name="features" value="Nhắc lịch tự động"> Nhắc lịch tự động</label>
+      <label><input type="checkbox" name="features" value="Hồ sơ thú cưng"> Hồ sơ thú cưng</label>
+      <label><input type="checkbox" name="features" value="Đánh giá doanh nghiệp"> Đánh giá doanh nghiệp</label>
+      <label><input type="checkbox" name="features" value="Giao diện dễ dùng"> Giao diện dễ dùng</label>
+      <label><input type="checkbox" name="features" value="Kết nối khách hàng mới"> Kết nối khách hàng mới</label>
+      <label><input type="checkbox" name="features" value="Khác"> Khác (ghi rõ): <input type="text" name="features_other"></label>
+    </div>
+    <div class="question radios">
+      <label>Sẵn sàng dùng thử miễn phí 1–2 tháng? *</label>
+      <label><input type="radio" name="trial" value="Có" required> Có</label>
+      <label><input type="radio" name="trial" value="Không"> Không</label>
+      <label><input type="radio" name="trial" value="Cần thêm thông tin"> Cần thêm thông tin</label>
     </div>
 
-    <div class="container mt-4 text-center">
-        <h2>🎟️ Pet Tag - Chứng minh thư thú cưng 🎟️</h2>
-        <p>Pet tag xinh xắn giúp bạn nhận diện thú cưng của mình một cách dễ dàng.</p>
-        <button class="btn btn-cute">Tạo Pet Tag ngay!</button>
-    </div>
-
-    <script>
-        function changeLanguage() {
-            let lang = document.getElementById("language").value;
-            if (lang === "en") {
-                document.querySelector("h1").innerText = "🐾 PetConnect - Connecting Pet Owners & Services 🐾";
-                document.querySelector(".banner").innerText = "Easier and cuter pet care than ever! 🐾";
-                document.querySelector("h2.text-center").innerText = "🐾 Pet Profile 🐾";
-                document.querySelector("form button").innerText = "Save Profile";
-            } else {
-                document.querySelector("h1").innerText = "🐾 PetConnect - Kết Nối Chủ Nuôi & Dịch Vụ 🐾";
-                document.querySelector(".banner").innerText = "Chăm sóc thú cưng dễ dàng và đáng yêu hơn bao giờ hết! 🐾";
-                document.querySelector("h2.text-center").innerText = "🐾 Hồ sơ thú cưng 🐾";
-                document.querySelector("form button").innerText = "Lưu hồ sơ";
-            }
-        }
-    </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <button type="submit">Gửi khảo sát</button>
+    <p><small>* Các trường có dấu sao là bắt buộc</small></p>
+  </form>
 </body>
 </html>
-
- <footer class="text-center bg-dark text-white py-3 mt-4">
-        &copy; 2025 PetConnect. Mọi quyền được bảo lưu.
-    </footer>
