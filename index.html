@@ -16,95 +16,100 @@
 <body>
   <h1>Khảo sát doanh nghiệp dịch vụ thú cưng</h1>
   <p>Thu thập thông tin về khó khăn hiện tại và khả năng tiếp cận khách hàng của các doanh nghiệp thú cưng tại TP.HCM.</p>
-  <form action="https://example.com/submit" method="post">
+
+  <form action="https://formspree.io/f/xvgaodeg" method="POST">
+    <!-- 1. Thông tin chung -->
     <h2>1. Thông tin chung</h2>
     <div class="question">
       <label for="name">Tên doanh nghiệp *</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="Tên doanh nghiệp" required>
     </div>
     <div class="question checkboxes">
-      <label>Loại hình dịch vụ chính (chọn tối đa 3) *</label>
-      <label><input type="checkbox" name="services" value="Phòng khám thú y"> Phòng khám thú y</label>
-      <label><input type="checkbox" name="services" value="Spa/Grooming"> Spa/Grooming</label>
-      <label><input type="checkbox" name="services" value="Cửa hàng thú cưng"> Cửa hàng thú cưng</label>
-      <label><input type="checkbox" name="services" value="Khách sạn thú cưng"> Khách sạn thú cưng</label>
-      <label><input type="checkbox" name="services" value="Khác"> Khác (ghi rõ): <input type="text" name="services_other"></label>
+      <label>Loại hình dịch vụ chính (tối đa 3) *</label>
+      <label><input type="checkbox" name="Loại hình dịch vụ[]" value="Phòng khám thú y"> Phòng khám thú y</label>
+      <label><input type="checkbox" name="Loại hình dịch vụ[]" value="Spa/Grooming"> Spa/Grooming</label>
+      <label><input type="checkbox" name="Loại hình dịch vụ[]" value="Cửa hàng thú cưng"> Cửa hàng thú cưng</label>
+      <label><input type="checkbox" name="Loại hình dịch vụ[]" value="Khách sạn thú cưng"> Khách sạn thú cưng</label>
+      <label>Khác: <input type="text" name="Loại hình dịch vụ khác"></label>
     </div>
     <div class="question">
-      <label for="address">Địa chỉ (Quận/Huyện, TP.HCM) *</label>
-      <input type="text" id="address" name="address" required>
+      <label for="address">Địa chỉ *</label>
+      <input type="text" id="address" name="Địa chỉ" required>
     </div>
     <div class="question radios">
       <label>Thời gian hoạt động *</label>
-      <label><input type="radio" name="tenure" value="Dưới 1 năm" required> Dưới 1 năm</label>
-      <label><input type="radio" name="tenure" value="1–3 năm"> 1–3 năm</label>
-      <label><input type="radio" name="tenure" value="Trên 3 năm"> Trên 3 năm</label>
+      <label><input type="radio" name="Thời gian hoạt động" value="Dưới 1 năm" required> Dưới 1 năm</label>
+      <label><input type="radio" name="Thời gian hoạt động" value="1–3 năm"> 1–3 năm</label>
+      <label><input type="radio" name="Thời gian hoạt động" value="Trên 3 năm"> Trên 3 năm</label>
     </div>
 
+    <!-- 2. Khó khăn hiện tại -->
     <h2>2. Khó khăn hiện tại</h2>
     <div class="question checkboxes">
-      <label>Những khó khăn lớn nhất đang gặp phải? (tối đa 3) *</label>
-      <label><input type="checkbox" name="issues" value="Thiếu khách hàng"> Thiếu khách hàng</label>
-      <label><input type="checkbox" name="issues" value="Không có nền tảng quản lý hiệu quả"> Không có nền tảng quản lý hiệu quả</label>
-      <label><input type="checkbox" name="issues" value="Khó giữ chân khách hàng cũ"> Khó giữ chân khách hàng cũ</label>
-      <label><input type="checkbox" name="issues" value="Không đủ nhân sự"> Không đủ nhân sự</label>
-      <label><input type="checkbox" name="issues" value="Thiếu công cụ marketing"> Thiếu công cụ marketing</label>
-      <label><input type="checkbox" name="issues" value="Khác"> Khác (ghi rõ): <input type="text" name="issues_other"></label>
+      <label>Những khó khăn lớn nhất đang gặp phải? *</label>
+      <label><input type="checkbox" name="Khó khăn[]" value="Thiếu khách hàng"> Thiếu khách hàng</label>
+      <label><input type="checkbox" name="Khó khăn[]" value="Không có nền tảng quản lý"> Không có nền tảng quản lý hiệu quả</label>
+      <label><input type="checkbox" name="Khó khăn[]" value="Khó giữ chân khách hàng"> Khó giữ chân khách hàng cũ</label>
+      <label><input type="checkbox" name="Khó khăn[]" value="Không đủ nhân sự"> Không đủ nhân sự</label>
+      <label><input type="checkbox" name="Khó khăn[]" value="Thiếu công cụ marketing"> Thiếu công cụ marketing</label>
+      <label>Khác: <input type="text" name="Khó khăn khác"></label>
     </div>
     <div class="question radios">
-      <label>Phương pháp quản lý lịch hẹn &amp; thông tin khách hàng? *</label>
-      <label><input type="radio" name="management" value="Ghi tay/sổ sách" required> Ghi tay/sổ sách</label>
-      <label><input type="radio" name="management" value="Excel"> Excel</label>
-      <label><input type="radio" name="management" value="Phần mềm riêng"> Phần mềm riêng</label>
-      <label><input type="radio" name="management" value="Không quản lý"> Không quản lý</label>
-      <label><input type="radio" name="management" value="Khác"> Khác (ghi rõ): <input type="text" name="management_other"></label>
+      <label>Phương pháp quản lý lịch hẹn & khách hàng *</label>
+      <label><input type="radio" name="Quản lý" value="Ghi tay/sổ sách" required> Ghi tay/sổ sách</label>
+      <label><input type="radio" name="Quản lý" value="Excel"> Excel</label>
+      <label><input type="radio" name="Quản lý" value="Phần mềm riêng"> Phần mềm riêng</label>
+      <label><input type="radio" name="Quản lý" value="Không quản lý"> Không quản lý</label>
+      <label>Khác: <input type="text" name="Quản lý khác"></label>
     </div>
     <div class="question radios">
       <label>Đã từng dùng nền tảng kết nối trực tuyến? *</label>
-      <label><input type="radio" name="used_platform" value="Có" required> Có (ghi rõ): <input type="text" name="platform_name"></label>
-      <label><input type="radio" name="used_platform" value="Chưa"> Chưa</label>
+      <label><input type="radio" name="Dùng nền tảng" value="Có" required> Có, ghi rõ: <input type="text" name="Tên nền tảng"></label>
+      <label><input type="radio" name="Dùng nền tảng" value="Chưa"> Chưa</label>
     </div>
 
+    <!-- 3. Khả năng tiếp cận khách hàng -->
     <h2>3. Khả năng tiếp cận khách hàng</h2>
     <div class="question checkboxes">
-      <label>Kênh tìm kiếm khách hàng mới (tất cả phù hợp) *</label>
-      <label><input type="checkbox" name="channels" value="Facebook"> Facebook</label>
-      <label><input type="checkbox" name="channels" value="Zalo"> Zalo</label>
-      <label><input type="checkbox" name="channels" value="Google Map"> Google Map</label>
-      <label><input type="checkbox" name="channels" value="Giới thiệu"> Giới thiệu qua khách cũ</label>
-      <label><input type="checkbox" name="channels" value="Không có kênh"> Không có kênh cụ thể</label>
-      <label><input type="checkbox" name="channels" value="Khác"> Khác (ghi rõ): <input type="text" name="channels_other"></label>
+      <label>Kênh tìm khách hàng mới *</label>
+      <label><input type="checkbox" name="Kênh tìm khách hàng[]" value="Facebook"> Facebook</label>
+      <label><input type="checkbox" name="Kênh tìm khách hàng[]" value="Zalo"> Zalo</label>
+      <label><input type="checkbox" name="Kênh tìm khách hàng[]" value="Google Map"> Google Map</label>
+      <label><input type="checkbox" name="Kênh tìm khách hàng[]" value="Giới thiệu"> Giới thiệu</label>
+      <label><input type="checkbox" name="Kênh tìm khách hàng[]" value="Không có kênh cụ thể"> Không có kênh cụ thể</label>
+      <label>Khác: <input type="text" name="Kênh khác"></label>
     </div>
     <div class="question radios">
-      <label>Gặp khó khăn duy trì lượng khách ổn định? *</label>
-      <label><input type="radio" name="stable_customers" value="Có" required> Có</label>
-      <label><input type="radio" name="stable_customers" value="Không"> Không</label>
-      <label><input type="radio" name="stable_customers" value="Khó trả lời"> Khó trả lời</label>
+      <label>Gặp khó khăn duy trì khách ổn định? *</label>
+      <label><input type="radio" name="Duy trì khách hàng" value="Có" required> Có</label>
+      <label><input type="radio" name="Duy trì khách hàng" value="Không"> Không</label>
+      <label><input type="radio" name="Duy trì khách hàng" value="Khó trả lời"> Khó trả lời</label>
     </div>
     <div class="question checkboxes">
-      <label>Quan tâm tham gia nền tảng kết nối để: *</label>
-      <label><input type="checkbox" name="interests" value="Tiếp cận khách hàng mới"> Tiếp cận khách hàng mới</label>
-      <label><input type="checkbox" name="interests" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
-      <label><input type="checkbox" name="interests" value="Tăng hiện diện online"> Tăng hiện diện online</label>
-      <label><input type="checkbox" name="interests" value="Không quan tâm"> Không quan tâm</label>
+      <label>Quan tâm tham gia nền tảng? *</label>
+      <label><input type="checkbox" name="Quan tâm nền tảng[]" value="Tiếp cận khách hàng mới"> Tiếp cận khách hàng mới</label>
+      <label><input type="checkbox" name="Quan tâm nền tảng[]" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
+      <label><input type="checkbox" name="Quan tâm nền tảng[]" value="Tăng hiện diện online"> Tăng hiện diện online</label>
+      <label><input type="checkbox" name="Quan tâm nền tảng[]" value="Không quan tâm"> Không quan tâm</label>
     </div>
 
+    <!-- 4. Kỳ vọng -->
     <h2>4. Kỳ vọng (tùy chọn)</h2>
     <div class="question checkboxes">
-      <label>Mong muốn tính năng nào trên nền tảng?</label>
-      <label><input type="checkbox" name="features" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
-      <label><input type="checkbox" name="features" value="Nhắc lịch tự động"> Nhắc lịch tự động</label>
-      <label><input type="checkbox" name="features" value="Hồ sơ thú cưng"> Hồ sơ thú cưng</label>
-      <label><input type="checkbox" name="features" value="Đánh giá doanh nghiệp"> Đánh giá doanh nghiệp</label>
-      <label><input type="checkbox" name="features" value="Giao diện dễ dùng"> Giao diện dễ dùng</label>
-      <label><input type="checkbox" name="features" value="Kết nối khách hàng mới"> Kết nối khách hàng mới</label>
-      <label><input type="checkbox" name="features" value="Khác"> Khác (ghi rõ): <input type="text" name="features_other"></label>
+      <label>Mong muốn tính năng nào?</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Nhắc lịch tự động"> Nhắc lịch tự động</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Hồ sơ thú cưng"> Hồ sơ thú cưng</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Đánh giá doanh nghiệp"> Đánh giá doanh nghiệp</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Giao diện dễ dùng"> Giao diện dễ dùng</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Kết nối khách hàng mới"> Kết nối khách hàng mới</label>
+      <label>Khác: <input type="text" name="Tính năng khác"></label>
     </div>
     <div class="question radios">
       <label>Sẵn sàng dùng thử miễn phí 1–2 tháng? *</label>
-      <label><input type="radio" name="trial" value="Có" required> Có</label>
-      <label><input type="radio" name="trial" value="Không"> Không</label>
-      <label><input type="radio" name="trial" value="Cần thêm thông tin"> Cần thêm thông tin</label>
+      <label><input type="radio" name="Dùng thử" value="Có" required> Có</label>
+      <label><input type="radio" name="Dùng thử" value="Không"> Không</label>
+      <label><input type="radio" name="Dùng thử" value="Cần thêm thông tin"> Cần thêm thông tin</label>
     </div>
 
     <button type="submit">Gửi khảo sát</button>
