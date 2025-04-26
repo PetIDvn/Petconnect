@@ -34,7 +34,7 @@
     </div>
     <div class="question">
       <label for="address">Địa chỉ *</label>
-      <input type="text" id="address" name="Địa chỉ" required>
+      <input type="text" id="Địa chỉ" name="Địa chỉ" required>
     </div>
     <div class="question radios">
       <label>Thời gian hoạt động *</label>
@@ -57,9 +57,9 @@
     <div class="question checkboxes">
       <label>Phương pháp quản lý lịch hẹn & khách hàng *</label>
       <label><input type="checkbox" name="Quản lý" value="Ghi tay/sổ sách" required> Ghi tay/sổ sách</label>
-      <label><input type="checkbox" name="Quản lý" value="Excel"> Excel</label>
+      <label><input type="checkbox" name="Quản lý" value="Excel"> Excel/Google Sheets</label>
       <label><input type="checkbox" name="Quản lý" value="Phần mềm riêng"> Phần mềm riêng</label>
-      <label><input type="checkbox" name="Quản lý" value="Không quản lý"> Không quản lý</label>
+      <label><input type="checkbox" name="Quản lý" value="Không quản lý"> Không có phần mềm quản lý</label>
       <label>Khác: <input type="text" name="Quản lý khác"></label>
     </div>
     <div class="question radios">
@@ -68,6 +68,10 @@
       <label><input type="radio" name="Dùng nền tảng" value="Chưa"> Chưa</label>
     </div>
 
+    <div class="question">
+      <label for="address"> Với các doanh nghiệp cung cấp dịch vụ thú cưng, hiện tại khách hàng đa số muốn biết giá cả để có sự chuẩn bị trước khi sử dụng dịch vụ và tạo sự minh bạch và niềm tin ở khách hàng. Bạn có sẵn sàng công khai ~khoảng giá (VD: 200–300K, khách hàng sẽ xin báo giá và đặt lịch khi chấp nhận giá) cho các dịch vụ không? Tại sao? *</label>
+      <input type="text" id="Công khai giá" name="Công khai giá" required>
+    
     <!-- 3. Khả năng tiếp cận khách hàng -->
     <h2>3. Khả năng tiếp cận khách hàng</h2>
     <div class="question checkboxes">
@@ -99,7 +103,7 @@
       <label>Mong muốn tính năng nào?</label>
       <label><input type="checkbox" name="Kỳ vọng[]" value="Quản lý lịch hẹn"> Quản lý lịch hẹn</label>
       <label><input type="checkbox" name="Kỳ vọng[]" value="Nhắc lịch tự động"> Nhắc lịch tự động</label>
-      <label><input type="checkbox" name="Kỳ vọng[]" value="Hồ sơ thú cưng"> Hồ sơ thú cưng</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Giữ chân khách hàng"> Giữ chân khách hàng</label>
       <label><input type="checkbox" name="Kỳ vọng[]" value="Đánh giá doanh nghiệp"> Đánh giá doanh nghiệp</label>
       <label><input type="checkbox" name="Kỳ vọng[]" value="Giao diện dễ dùng"> Giao diện dễ dùng</label>
       <label><input type="checkbox" name="Kỳ vọng[]" value="Kết nối khách hàng mới"> Kết nối khách hàng mới</label>
@@ -110,6 +114,16 @@
       <label><input type="radio" name="Dùng thử" value="Có" required> Có</label>
       <label><input type="radio" name="Dùng thử" value="Không"> Không</label>
       <label><input type="radio" name="Dùng thử" value="Cần thêm thông tin"> Cần thêm thông tin</label>
+    </div>
+
+    <div class="question checkboxes">
+      <label>Khi bắt đầu sử dụng nền tảng, bạn cần hỗ trợ gì nhất?</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Hướng dẫn cài đặt & đào tạo nhân viên"> Hướng dẫn cài đặt & đào tạo nhân viên</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Tích hợp với hệ thống quản lý hiện có"> Tích hợp với hệ thống quản lý hiện có</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Hỗ trợ kỹ thuật 24/7"> Hỗ trợ kỹ thuật 24/7</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Tư vấn marketing"> Tư vấn marketing</label>
+      <label><input type="checkbox" name="Kỳ vọng[]" value="Không cần hỗ trợ thêm"> Không cần hỗ trợ thêm</label>
+      <label>Khác: <input type="text" name="hỗ trợ thêm"></label>
     </div>
 
     <button type="submit">Gửi khảo sát</button>
